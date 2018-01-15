@@ -1,0 +1,51 @@
+<section id="contact-view">
+   <section id="separador">
+
+   <div class="row">
+          <div class="container">
+           <div class="go-back">
+
+               <a href="#!/"><button class="btn btn-primary" ><i class="fa fa-arrow-left" aria-hidden="true"></i>Go Back</button></a>
+           </div>
+    </div>
+    </div>
+
+</section>
+
+
+<div class="background">
+       <div class= "container">
+        <div class="row">
+           <div class="contact-display col-lg-4">
+             <h2>Personal Data</h2>
+              <img src="{{contact.photo}}" width="325" heigth="500"alt="">
+              <p>Name: {{contact.name}}</p>
+              <p>Phone:{{contact.phone}} </p>
+              <p>E-mail: {{contact.mail}}</p>
+           </div>
+           <div class="gif-display col-lg-4">
+              <h2>Favourite Gifs</h2>
+              <div class="gif-disposition">
+               <div ng-repeat="gifFav in contact.gifFavs track by gifFav.id">
+
+               <img src="{{gifFav.images.downsized_medium.url}}" alt="" width="150" height="150">
+               </div>
+               </div>
+            </div>
+
+
+
+           <div class="comic-display col-lg-4">
+                <h2>Favourite Comics</h2>
+                <div class="comic-disposition">
+                 <div ng-repeat="comicFav in contact.comicFavs track by comicFav.id">
+
+               <img src="{{comicFav.thumbnail.path +'.jpg'}}" width="150" height="150" alt="">
+               </div>
+               </div>
+           </div>
+
+        </div>
+        </div>
+    </div>
+</section>

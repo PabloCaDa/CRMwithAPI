@@ -1,0 +1,202 @@
+<section id="separador">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="input-group filter-name">
+                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="Search by name" aria-describedby="basic-addon1 " ng-model="search.name">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="Search by e-mail" aria-describedby="basic-addon2" ng-model="search.mail">
+            </div>
+
+
+            </div>
+
+        </div>
+
+
+</section>
+
+<div class="background" style="background: grey">
+    <div class="container">
+        <div class="row content">
+            <div ng-cloak class="display col-lg-7">
+                <div ng-repeat="contact in contacts | filter:search track by $index">
+                       <div class="file">
+                        <div class="imagen" style="background-image: url({{contact.photo}})">
+                        </div>
+                        <div class="data">
+                           <div class="name">
+                            <h2>{{contact.name}}</h2>
+                            </div>
+                            <div class="file-footer">
+                            <div class="data-labels">
+                               <span class="glyphicon glyphicon-picture"></span><span class="badge">{{contact.gifFavs.length}}</span>
+
+                               <span class="glyphicon glyphicon-book"></span><span class="badge">{{contact.comicFavs.length}}</span>
+                            </div>
+                                 <div class="buttons-file">
+                            <a href="#!/contact/{{contact.id}}"><button type="button"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></a>
+                            <button type="button" ng-click="copyContact(contact.id)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+                            <button type="button" ng-click="removeContact(contact.id)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+
+                            </div>
+                            </div>
+
+
+                        </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            <form name="form" id="form" class="col-lg-5 css-form" ng-cloak novalidate>
+                <div class="register-header">
+                    <span class="label form-headlabel" ng-hide="modified">New Contact</span>
+                    <span class="label form-headlabel" ng-hide="!modified">Edit Contact</span>
+
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary" ng-click="isData()">Data</button>
+                        <button type="button" class="btn btn-primary" ng-click="isGifs()">GIFs</button>
+                        <button type="button" class="btn btn-primary" ng-click="isComics()">Comics</button>
+                    </div>
+
+                </div>
+                <div class="data-window" ng-if="data">
+                    <div class="register-body" ng-keyup="keyUpForm()">
+                        <label for="">Name</label>
+                        <input name="name" type="text" ng-model="newContact.name" placeholder="Write a name" required>
+                        <small ng-show="form.name.$touched && form.name.$invalid">This field is required</small>
+                        <label for="">E-mail</label>
+                        <input name="email" type="email" ng-model="newContact.mail" placeholder="Write a email" required>
+                        <small ng-show="form.email.$touched && form.email.$invalid">This field is required and must have an email format: xxxxx@xxx.com</small>
+                        <label for="">Phone</label>
+                        <input name="phone" type="number" ng-model="newContact.phone" placeholder="Write a telephone number" required>
+                        <small  ng-show="form.phone.$touched && form.phone.$invalid">This field is required</small>
+                        <small  ng-show=" form.phone.$error.number">This field is required</small>
+                        <label for="">Photo</label>
+                        <input name="photo" type="text" ng-model="newContact.photo" placeholder="Url Photo" required>
+                        <small  ng-show="form.photo.$touched && form.photo.$invalid">This field is required</small>
+                        <div class="register-footer">
+                            <div>
+                                <span class="glyphicon glyphicon-user"></span><span class="badge">{{contacts.length}}</span>
+                            </div>
+                            <div class="form-buttons">
+
+
+                                <button type="button" class="btn btn-default cancel-btn" ng-click="cancel()">Cancel</button>
+                                <button type="button" class="btn btn-default" ng-click="addContact()" ng-if="!modified" ng-disabled="!(checkFull())">Create</button>
+
+                                <button type="button" class="btn btn-default modify" ng-click="modifyContact(newContact.id)" ng-show="(modified)" ng-disabled="!(checkFull())">Modify</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gifs-window" ng-if="boolGifs">
+                    <label for="">Favourites Gifs:</label>
+                    <div class="gifs-favs">
+                    <div  ng-repeat="gifFav in newContact.gifFavs track by gifFav.id">
+                        <button ng-click="isFavGif(gifFav)"><img src="{{gifFav.images.original.url}}" width="80" height="80" alt=""></button>
+
+                    </div>
+                    </div>
+                    <div class="gifs-browser">
+                        <input type="text" id="gifs-input" placeholder="Search a GIF" ng-model="searchParams.gifSearched" ng-keyup="searchBtn()">
+                        <div class="gif-filter-buttons">
+                            <button type="button" class="btn btn-default" ng-click="sortBy('trending_datetime')">Trending</button>
+                            <button type="button" class="btn btn-default" ng-click="sortBy('slug')">Recent</button>
+                        </div>
+                    </div>
+                    <button type="button" id="searchGif-btn" class="btn btn-warning search-btn" ng-click="searchGifs(searchParams.gifSearched)">Search</button>
+
+                    <div class="giphy-showcase">
+                <a ng-click="previous8()" ng-hide="jumperG===0">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+                        <div class="gifs-container">
+                            <div ng-repeat="gif in gifs  | orderBy:'property' track by gif.id" class="gifs-layout">
+
+                                <button ng-click="isFavGif(gif)"><img src="{{gif.images.downsized_medium.url}}" width="80" height="80" alt=""></button>
+
+                            </div>
+                        </div>
+
+           <a ng-click="next8()" ng-hide="gifs.length===0">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+                    </div>
+
+                    <div class="gif-footer">
+                        <div>
+                            <span class="glyphicon glyphicon-user"></span><span class="badge">{{contacts.length}}</span>
+                        </div>
+                        <div class="form-buttons">
+
+
+                            <button type="button" class="btn btn-default cancel-btn" ng-click="cancel()">Cancel</button>
+                            <button type="button" class="btn btn-default" ng-click="addContact()" ng-if="!modified" ng-disabled="!(checkFull())">Create</button>
+
+                             <button type="button" class="btn btn-default modify" ng-click="modifyContact()" ng-show="(modified)" ng-disabled="!(checkFull())">Modify</button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="comics-window" ng-if="boolComics">
+                    <label for="">Favourites Comics:</label>
+                    <div class="comics-favs">
+                    <div  ng-repeat="comicFav in newContact.comicFavs track by comicFav.id">
+                        <button ng-click="isFavComic(comicFav)"><img src="{{comicFav.thumbnail.path +'.jpg'}}" width="80" height="80" alt=""></button>
+
+                    </div>
+                    </div>
+                    <div class="comics-browser">
+                        <input type="text" id="comics-input" placeholder="Search a Comic" ng-model="searchParams.comicSearched">
+
+                    </div>
+                    <button type="button" id="search-btn" class="btn btn-warning search-btn" ng-click="searchComics(searchParams.comicSearched)">Search</button>
+
+                    <div class="comics-showcase">
+                <a ng-click="previous3()" ng-hide="jumperC===0">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+                        <div class="comics-container">
+                            <div ng-repeat="comic in comics  | orderBy:'property' track by comic.id" class="comics-layout">
+
+                                <button ng-click="isFavComic(comic)"><img src="{{comic.thumbnail.path +'.jpg'}}" width="117" height="117" alt=""></button>
+
+                            </div>
+                        </div>
+
+           <a ng-click="next3()" ng-hide="comics.length===0">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+                    </div>
+
+                    <div class="comic-footer">
+                        <div>
+                            <span class="glyphicon glyphicon-user"></span><span class="badge">{{contacts.length}}</span>
+                        </div>
+                        <div class="form-buttons">
+
+                            <button type="button" class="btn btn-default cancel-btn" ng-click="cancel()">Cancel</button>
+                            <button type="button" class="btn btn-default" ng-click="addContact()" ng-if="!modified" ng-disabled="!(checkFull())">Create</button>
+
+                            <button type="button" class="btn btn-default modify" ng-click="modifyContact()" ng-show="(modified)" ng-disabled="!(checkFull())">Modify</button>
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+

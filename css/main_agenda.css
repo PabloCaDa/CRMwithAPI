@@ -1,0 +1,479 @@
+header {
+    padding: 25px 0 25px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: 'Bungee', cursive;
+    font-size: 110px;
+    background: rgb(241, 244, 66);
+
+
+}
+
+h1 {
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid black;
+    color: black;
+
+}
+
+
+h2 {
+    font-size: 20px;
+}
+
+body {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 18px;
+}
+
+
+/*-----Separador-----*/
+
+#separador {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    background: rgba(0, 0, 0, 0.25);
+    text-align: right;
+
+
+}
+
+#separador .row {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid black;
+}
+
+#separador .row .col-lg-8 {
+    display: flex;
+    align-items: center;
+
+}
+
+#separador .row .col-lg-8 .filter-name {
+    border-left: 20px solid rgb(241, 244, 66);
+
+}
+
+
+#separador div .input-group {
+    margin-right: 10px;
+    width: 250px;
+}
+
+
+#separador div .filter-estudios {
+    width: 250px;
+
+}
+
+
+/*-------Background-----*/
+
+.background {
+    padding-bottom: 250px;
+}
+
+.background .container .content .display div a {
+    text-decoration: none;
+    color: black;
+}
+
+/*-----Register-----*/
+
+.register-header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.register-body {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.register-body button {
+    background: rgb(241, 244, 66);
+}
+
+.register-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+
+}
+
+/*-----Display----*/
+
+.display {
+    padding: 25px 0px 25px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+}
+
+/*-------File-----*/
+
+.file {
+    background: white;
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 100px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+
+
+
+}
+
+.file .imagen {
+    width: 120px;
+    height: 120px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: 50%;
+
+
+
+}
+
+.file .data {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 50px;
+    width: 60%;
+
+
+}
+
+.file .data .name {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.file .data .file-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+
+    /*-----Form-data---------*/
+}
+
+.css-form {
+    margin-top: 10px;
+    background: black;
+    background: -webkit-linear-gradient(left top, black, black);
+    background: -o-linear-gradient(bottom right, black, black);
+    background: -moz-linear-gradient(bottom right, black, black);
+    background: linear-gradient(to bottom right, black, grey);
+    color: rgb(192, 192, 192);
+    padding: 20px 20px 20px 20px;
+    border-radius: 20px;
+    border: 2px solid rgba(241, 244, 66, 0.5);
+
+}
+
+.css-form .register-header .form-headlabel{
+    text-align: center;
+    padding-top:10px;
+    background-color: grey;
+}
+
+.css-form label {
+    margin-top: 30px;
+
+}
+
+.css-form .data-window .register-body input {
+    color: black;
+}
+
+.css-form .data-window .register-body input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+}
+
+.css-form .data-window .register-body input.ng-valid.ng-touched {
+    background-color: #78FA89;
+}
+
+.css-form .data-window .register-body small {
+    color: red;
+
+}
+
+.css-form .form-buttons .cancel-btn {
+
+    background: rgba(255, 0, 0,0.75);
+}
+
+.css-form .form-buttons .modify {
+
+    background: rgb(0, 255, 0);
+}
+
+.css-form .form-buttons .badge {
+    background-color: rgb(241, 244, 66);
+    margin-left: 50px;
+}
+
+
+
+/*-------Gifs------*/
+
+.css-form .gifs-browser {
+    display: flex;
+    justify-content: space-between;
+}
+
+.css-form .gifs-browser input {
+    flex: 2;
+}
+
+.css-form .gifs-window .search-btn {
+    margin-top: 20px;
+    align-items: flex-end;
+
+}
+
+.css-form .gifs-window .gifs-favs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.css-form .gifs-window .gifs-browser {
+    margin-top: 30px;
+
+}
+
+
+.css-form .gifs-window .giphy-showcase {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.giphy-showcase .glyphicon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    color: rgb(241, 244, 66);
+}
+
+
+.giphy-showcase .glyphicon:hover {
+    color: rgba(241, 244, 66, 0.5);
+
+}
+
+.giphy-showcase button {
+    background: none;
+
+
+}
+
+.giphy-showcase a {
+    text-decoration: none;
+}
+
+.giphy-showcase .gifs-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.giphy-showcase .gifs-container .gifs-layout:hover {
+
+    background: rgba(0, 0, 0, 1);
+    opacity: 0.5;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+
+}
+
+
+/*--------------Comics----------*/
+
+.css-form .comics-window .comics-favs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.css-form .comics-window .comics-browser {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.css-form .comics-window .comics-browser input {
+    flex: 2;
+}
+
+.css-form .comics-window .search-btn {
+    margin-top: 20px;
+    align-items: flex-end;
+
+}
+
+
+.css-form .comics-window .comics-showcase {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.css-form .comics-window .comics-showcase .glyphicon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    color: rgb(241, 244, 66);
+}
+
+
+.css-form .comics-window .comics-showcase .glyphicon:hover {
+    color: rgba(241, 244, 66, 0.5);
+
+}
+
+.css-form .comics-window .comics-showcase button {
+    background: none;
+
+
+}
+
+.css-form .comics-window .comics-showcase a {
+    text-decoration: none;
+}
+
+.css-form .comics-window .comics-showcase .comics-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.css-form .comics-window .comics-showcase .comics-container .comics-layout:hover {
+
+    background: rgba(0, 0, 0, 1);
+    opacity: 0.5;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+
+}
+
+
+/*-----Contact-view-----*/
+
+#contact-view #separador .row .container .go-back i {
+    margin-right: 10px;
+}
+
+#contact-view .background .container .row .contact-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+#contact-view .background .container .row .contact-display h2 {
+    text-decoration: underline;
+}
+
+#contact-view .background .container .row .contact-display img {
+    margin-top: 20px;
+    border: 5px solid grey;
+}
+
+
+#contact-view .background .container .row .contact-display p {
+    margin-top: 20px;
+}
+
+
+#contact-view .background .container .row .gif-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#contact-view .background .container .row .gif-display .gif-disposition {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+#contact-view .background .container .row .gif-display .gif-disposition img {
+    margin-top: 20px;
+    border: 2px solid grey;
+}
+
+#contact-view .background .container .row .comic-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#contact-view .background .container .row .comic-display .comic-disposition {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+#contact-view .background .container .row .comic-display .comic-disposition img {
+    margin-top: 20px;
+    border: 2px solid grey;
+}
+
+
+
+/*------Footer-----*/
+
+footer {
+    background: rgb(241, 244, 66);
+    padding: 10px 0 10px 0;
+    border-top: 1px solid black;
+}
+
+footer .logos-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

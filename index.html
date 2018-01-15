@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="Agenda">
+
+<head>
+    <link rel="stylesheet" href="libs/angular-csp.css">
+    <script src="libs/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="libs/bootstrap-3.3.7-dist/css/bootstrap.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+      type="text/css" rel="stylesheet" />
+    <script src="libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+    <link rel="stylesheet" href="css/main_agenda.css">
+</head>
+
+<header>
+
+    <h1>FREAK AGENDA</h1>
+
+ </header>
+
+
+<body>
+
+
+    <div ng-view>
+
+
+    </div>
+
+
+    <footer>
+    <div class="row">
+        <div class="col-lg-12 logos-container">
+            <div class="marvel-logo">
+                <img src="https://seeklogo.com/images/M/marvel-comics-logo-31D9B4C7FB-seeklogo.com.png" width= "50" heigth="30" alt="">
+            </div>
+            <div class="giphy-logo">
+                <img src="https://www.inboxsdk.com/images/logos/giphy.png" width= "100" heigth="84" alt="">
+            </div>
+
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!--Librerias--->
+    <script src="libs/angular.js"></script>
+    <script src="libs/angular-route.min.js"></script>
+    <!--Modulos--->
+    <script src="js/app.config.agenda.js"></script>
+    <!--Servicios y Factorias--->
+    <script src="js/factories/contact.factory.js"></script>
+    <script src="js/factories/gif.factory.js"></script>
+    <script src="js/factories/comics.factory.js"></script>
+    <!--Controladores--->
+    <script src="js/controllers/agenda.users.controller.js"></script>
+    <script src="js/controllers/contact.controller.js"></script>
+
+<!--
+<script>
+$document("#gifs-input").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#searchGif-btn").click();
+    }
+});
+
+
+</script>
+-->
+
+
+</body>
+
+
+</html>
